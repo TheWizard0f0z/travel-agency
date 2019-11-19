@@ -26,6 +26,6 @@
   }
 
   &:disabled {
-    background: grey;
+    background: $color-disabled;
   }
 }
