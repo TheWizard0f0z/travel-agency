@@ -9,7 +9,8 @@ const select = {
 
 const mockProps = {
   title: 'Happy Hour',
-  promoDescription: 'promoDescription',
+  promoDescription:
+    'Its your time! Take advantage of Happy Hour! All offers 20% off!',
 };
 
 describe('Component HappyHourAd', () => {
