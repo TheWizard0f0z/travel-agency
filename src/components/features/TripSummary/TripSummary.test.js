@@ -45,7 +45,13 @@ describe('Component TripSummary', () => {
         .find('.details span')
         .at(1)
         .text()
-    ).toEqual(`from ${expectedCost}`);
+    ).toEqual(`Price from: ${expectedCost - (expectedCost / 100) * 20}`);
+    expect(
+      component
+        .find('.details span')
+        .at(2)
+        .text()
+    ).toEqual(`Standard price: ${expectedCost}`);
   });
 
   /*

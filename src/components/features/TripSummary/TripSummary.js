@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 import styles from './TripSummary.scss';
 import { Col } from 'react-flexbox-grid';
 
+import { promoPrice } from '../../../utils/promoPrice';
+import { formatPrice } from '../../../utils/formatPrice';
+
 const TripSummary = ({ id, image, name, cost, days, tags }) => (
   <Col xs={12} sm={6} lg={4} className={styles.column}>
     <Link to={`/trip/${id}`} className={styles.link}>
@@ -12,7 +15,10 @@ const TripSummary = ({ id, image, name, cost, days, tags }) => (
         <h3 className={styles.title}>{name}</h3>
         <div className={styles.details}>
           <span>{days} days</span>
-          <span>from {cost}</span>
+          <span className={styles.promotion}>
+            Price from: {formatPrice(promoPrice(cost, 20))}
+          </span>
+          <span>Standard price: {formatPrice(promoPrice(cost, 0))}</span>
         </div>
         {tags && (
           <div className={styles.tags}>
